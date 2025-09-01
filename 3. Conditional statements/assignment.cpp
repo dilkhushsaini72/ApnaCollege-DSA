@@ -77,8 +77,27 @@
 using namespace std;
 
 int main() {
-    int digit ;
+    int digit;
     cout << "Enter 3 digit number :";
     cin >> digit;
+    int copy = digit;
+
+    int dig1 = digit % 10;
+    digit = digit / 10;
+
+    int dig2 = digit % 10;
+    digit = digit / 10;
+
+    int dig3 = digit % 10;
+    digit = digit / 10;
+
+    int digSum = dig1*dig1*dig1 + dig2*dig2*dig2 + dig3*dig3*dig3;
+    cout << digSum << endl;
+    if(digSum == copy){
+        cout << copy << " is Armstronge";
+    }else{
+        cout << copy << " is Not Armstronge";
+    }
+    
    return 0 ;
 }
