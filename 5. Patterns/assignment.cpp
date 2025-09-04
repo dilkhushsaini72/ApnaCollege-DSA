@@ -21,20 +21,50 @@ int main() {
     //     cout << endl;
     // }
 
-    //    ****
-    //   ****
-    //  ****
-    // ****
+    // Logic to print space and * ::
 
-    int n = 9;
-    double center = (n - 1) / 2.0;
+  //  1  ----*        sp = 4   sp = n - i    |    * = 1    * = i+i - 1
+  //  2  ---***       sp = 3   sp = n - i    |    * = 3    * = i+i - 1
+  //  3  --*****      sp = 2   sp = n - i    |    * = 5    * = i+i - 1
+  //  4  -*******     sp = 1   sp = n - i    |    * = 7    * = i+i - 1
+  //  5  *********    sp = 0   sp = n - i    |    * = 9    * = i+i - 1
 
-    for(int i = 0;i < n; ++i){
-        for(int j = 0; j < n; ++j){
-            int d = max(abs(i - center), abs(j - center));
-            cout << d + 1 << " ";
+    int n = 1;
+    // upper part of the diamond pattern
+
+    for(int i = 1; i <= n; i++){
+        // Spaces
+        for(int j = 1; j <= n - i; j++){
+            cout << " ";
+        }
+        
+        for(int j = 1; j <= i+i - 1; j++){
+            cout << "*";
         }
         cout << endl;
+    }
+
+    // Lower part of the diamond pattern
+
+    // Logic ::
+    //  5  *********    sp = 0   sp = n - i   |    * = 9    * = i + i - 1
+    //  4  -*******     sp = 1   sp = n - i   |    * = 7    * = i + i - 1
+    //  3  --*****      sp = 2   sp = n - i   |    * = 5    * = i + i - 1
+    //  2  ---***       sp = 3   sp = n - i   |    * = 3    * = i + i - 1
+    //  1  ----*        sp = 4   sp = n - i   |    * = 1    * = i + i - 1
+
+    // bottom 
+    for(int i = n; i >= 1; i--){
+      // Space
+      for(int j = 1; j <= n - i; j++){
+        cout << " ";
+      }
+      
+      // Stars
+      for(int j = 1; j <= i+i - 1; j++){
+        cout << "*";
+      }
+      cout << endl;
     }
 
     return 0;
