@@ -19,3 +19,4 @@ int main() {
     cout << linearSearch(arr, n, 1) << endl;
     return 0;
 }
+
